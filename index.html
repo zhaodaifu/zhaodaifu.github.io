@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js non-webkit ie6 ie6-8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js non-webkit ie7 ie6-8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js non-webkit ie8 ie6-8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js non-webkit ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js non-webkit"><!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>赵大夫</title>
+
+<meta name="viewport" content="initial-scale=1.0">
+
+<link rel="stylesheet" href="css/animate.min.css" />
+
+<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="js/jquery.waypoints-2.0.3.min.js" type="text/javascript"></script>
+<script src="js/heartcode-canvasloader-min.js" type="text/javascript"></script>
+
+<!--引用百度地图API-->
+<style type="text/css">
+.iw_poi_title {
+    color: #CC5522;
+    font-size: 14px;
+    font-weight: bold;
+    overflow: hidden;
+    padding-right: 13px;
+    white-space: nowrap
+}
+
+.iw_poi_content {
+    font: 12px arial, sans-serif;
+    overflow: visible;
+    padding-top: 4px;
+    white-space: -moz-pre-wrap;
+    word-wrap: break-word
+}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+<style type="text/css">
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#slide_1 {
+    width: 100%;
+    border-bottom: 1px solid #878787;
+    background: linear-gradient(to bottom, #e0e0e0 0%, #ffffff 50%, #ffffff 100%);
+}
+
+#slide_1 .wrapper {
+    width: 1024px;
+    height: 768px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#slogan {
+    font-family: "Adobe Heiti Std";
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    left: 30px;
+    top: 2em;
+    line-height: 60px;
+}
+
+#slogan p {
+    margin: 0;
+    padding: 0;
+}
+
+#slogan .second {
+    margin-left: 2em;
+}
+
+#slogan .third {
+    margin-left: 4em;
+}
+
+#slogan span {
+    color: red;
+}
+
+#subslogan {
+    font-family: "Adobe Song Std";
+    font-size: 40px;
+    color: #949494;
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    line-height: 40px;
+}
+
+#subslogan .second {
+    display: block;
+    margin-left: 2em;
+}
+
+#more {
+    font-family: "Hiragino Sans GB";
+    font-size: 15px;
+    position: absolute;
+    bottom: 20px;
+    left: 60px;
+
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+
+    -webkit-animation: consoleBlink 1.5s infinite;
+    -moz-animation: consoleBlink 1.5s infinite;
+    -o-animation: consoleBlink 1.5s infinite;
+    animation: consoleBlink 1.5s infinite;
+}
+
+#more .icon {
+    background: url('img/arrow.png');
+    width: 24px;
+    height: 17px;
+    background-size: 100% 100% !important;
+    margin: 0 auto;
+}
+
+#logo {
+    width: 240px;
+    height: 94px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+#logo .image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('img/logo.png');
+    background-size: 100% 100% !important;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/logo.png', sizingMethod='crop');
+}
+
+#yengo {
+    width: 175px;
+    height: 28px;
+    position: absolute;
+    bottom: 10px;
+    right: 30px;
+}
+
+#yengo .image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('img/yengo.png');
+    background-size: 100% 100% !important;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/yengo.png', sizingMethod='crop');
+}
+
+#girl {
+    width: 675px;
+    height: 638px;
+    position: absolute;
+    bottom: 0;
+    right: 30px;
+}
+
+#girl .image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url('img/girl.png');
+    background-size: 100% 100% !important;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/girl.png', sizingMethod='crop');
+}
+
+/* slide 2 */
+
+#slide_2 {
+    width: 100%;
+    background: #d0cb9b;
+    font-family: "SimHei";
+}
+
+#slide_2 .wrapper {
+    width: 1024px;
+    height: 768px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.webkit #slide_2 .wrapper .background {
+    background: url('img/photo.jpg');
+    background-size: 100% 100% !important;
+    width: 100%;
+    height: 100%;
+    display: block;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+.non-webkit #slide_2 {
+    background: url('img/photo_blurred.jpg');
+    background-size: 100% 100% !important;
+    background-position: center !important;
+}
+
+.webkit #slide_2 .wrapper .blurred {
+    -webkit-filter: blur(30px);
+    filter: blur(30px);
+}
+
+#slide_2 .title {
+    font-size: 52px;
+    color: rgba(255, 255, 255, 0.98);
+    text-align: center;
+    text-shadow: 0 0 2px #000000;
+    position: absolute;
+    top: 100px;
+    width: 100%;
+}
+
+.ie6-8 #slide_2 .title {
+    color: white;
+}
+
+#slide_2 .description,
+#slide_2 .subdescription {
+    font-size: 70px;
+    color: #FFFFFF;
+    text-shadow: 0 0 3px #ffffff;
+    text-align: center;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+}
+
+#channel1,
+#reuters {
+    font-size: 55px;
+    color: rgba(255, 255, 255, 0.98);
+    text-shadow: 0 0 2px #000000;
+    position: absolute;
+    top: 400px;
+    width: 100%;
+}
+
+.ie6-8 #channel1,
+.ie6-8 #reuters {
+    color: white;
+}
+
+#channel1 {
+    text-align: left;
+    padding-left: 20px;
+}
+
+#reuters {
+    text-align: right;
+    padding-right: 20px;
+}
+
+#channel1 img,
+#reuters img {
+    vertical-align: bottom;
+    padding: 3px 15px;
+    width: 60px;
+    height: 60px;
+}
+
+#slide_2 .subdescription {
+    top: 500px;
+}
+
+/* slide 3 */
+
+#slide_3 {
+    background: #05337d;
+    width: 100%;
+}
+
+#slide_3 .wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#slide_3 .title {
+    font-size: 45px;
+    font-family: STHeiti, FangSong;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    padding-top: 30px;
+}
+
+.ie6-8 #slide_3 .title {
+    color: white;
+}
+
+#slide_3 .description {
+    font-size: 25px;
+    font-family: STHeiti;
+    color: #FFFFFF;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#slide_3 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: STSong, FangSong_GB2312;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+}
+
+#slide_3 table td {
+    padding: 20px 10px;
+}
+
+#slide_3 table .first .image {
+    margin: 0 auto;
+    width: 150px;
+    height: 59px;
+    background: url('img/logo_table.png');
+    background-size: 100% 100% !important;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/logo_table.png', sizingMethod='crop');
+}
+
+#slide_3 table .second,
+#slide_3 table .item .heading {
+    font-size: 25px;
+    font-family: STHeiti;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+#slide_3 table .second {
+    background: #1f4a91;
+}
+
+#slide_3 .item .heading {
+    text-align: right;
+    background: #335792;
+    border-bottom: 1px solid #2e4d81;
+}
+
+#slide_3 .item td {
+    background: #121e2f;
+    border-bottom: 1px solid #111b2b;
+    transition: all 0.3s linear;
+}
+
+#slide_3 .item .option.good {
+    background: #188e30;
+    color: white;
+}
+
+#slide_3 .item .option:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.57);
+    -moz-transform: scale(1.1);
+}
+
+#slide_3 .main,
+#slide_3 .item .main {
+    background: white;
+    border-bottom: 1px solid #dddddd;
+    color: #131d2f;
+    font-size: 25px;
+    font-family: STHeiti;
+    font-weight: bold;
+}
+
+#slide_3 .item .best {
+    color: #068200;
+    background: white;
+}
+
+/* slide 4 */
+
+#slide_4 {
+    overflow: hidden;
+}
+
+#slide_4 table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: STHeiti;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    height: 768px;
+}
+
+#slide_4 td {
+    width: 50%;
+    vertical-align: bottom;
+}
+
+#slide_4 .left {
+    background: #000000;
+}
+
+#slide_4 .right {
+    background: #5b6371;
+}
+
+#slide_4 .left .container,
+#slide_4 .right .container {
+    position: relative;
+}
+
+#slide_4 .patient {
+    display: block;
+    height: 560px;
+    background-size: 100% 100% !important;
+}
+
+#slide_4 .left .wrapper {
+    text-align: right;
+}
+
+#slide_4 .left .patient {
+    background-image: url('img/before.png');
+    margin: 0 250px 0 auto;
+    width: 235px;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/before.png', sizingMethod='crop');
+}
+
+#slide_4 .right .wrapper {
+    text-align: left;
+}
+
+#slide_4 .right .patient {
+    background-image: url('img/after.png');
+    margin: 0 auto 0 250px;
+    width: 158px;
+    _background: none;
+    _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='img/after.png', sizingMethod='crop');
+}
+
+#slide_4 .title {
+    position: absolute;
+    right: 40px;
+    top: -170px;
+    color: #585858;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+#slide_4 .description {
+    position: absolute;
+    right: 40px;
+    top: -100px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#slide_4 .details {
+    text-align: left;
+}
+
+#slide_4 .details .sign {
+    font-family: STHeiti;
+    font-size: 90px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+#slide_4 .details .data {
+    font-size: 17px;
+    font-family: "Yuanti SC";
+}
+
+#slide_4 .left .details {
+    position: absolute;
+    top: 70px;
+    right: 40px;
+}
+
+#slide_4 .right .details {
+    position: absolute;
+    top: 70px;
+    left: 40px;
+}
+
+#slide_4 .left .card {
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    padding: 10px 20px;
+    background: #232323;
+    text-align: justify;
+    font-weight: bold;
+}
+
+#slide_4 .left .card .main {
+    font-size: 26px;
+}
+
+#slide_4 .left .card .name {
+    font-size: 34px;
+}
+
+#slide_4 .left .card .additional {
+    color: #adadad;
+    font-size: 16px;
+    padding-top: 7px;
+}
+
+#slide_4 .right .result {
+    color: black;
+    font-size: 26px;
+    font-family: "Yuanti SC";
+    position: absolute;
+    bottom: 150px;
+    left: 40px;
+    font-weight: bold;
+}
+
+#slide_4 .right .result .weight {
+    font-family: "STHeiti";
+    font-size: 36px;
+    margin-left: 1.5em;
+    color: white;
+    text-shadow: 0 0 3px #ffffff;
+    padding-top: 4px;
+}
+
+.ie6 #slide_4 .right .details,
+.ie6 #slide_4 .right .result {
+    margin-left: -250px;
+}
+
+#film {
+    background: url('img/film.png');
+    height: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.progress-container {
+    background: #1A1A1A;
+}
+
+#progress {
+    overflow: hidden;
+    margin: 0 auto;
+    width: 1024px;
+}
+
+#progress img {
+    display: block;
+    padding: 0;
+    margin: 0;
+    float: left;
+    width: 128px;
+    height: 170px;
+    transition: all 0.5s linear;
+    -webkit-filter: grayscale(1);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: gray;
+    filter: grayscale(100%);
+    filter: url('img/desaturate.svg')}#greyscale);
+}
+
+#progress .image:hover {
+    -webkit-filter: grayscale(0);
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    filter: gray;
+    filter: grayscale(0%);
+}
+
+#ruler {
+    background: black url('img/ruler.png');
+    height: 20px;
+}
+
+#map {
+    position: relative;
+}
+
+#copyrights {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 100000;
+    color: black;
+    background: white;
+    padding: 2px 11px;
+    font-size: 10px;
+    margin-right: 151px;
+}
+
+@media all and (min-width: 1164px) {
+    #progress {
+        width: 1164px;
+    }
+
+    #progress .image {
+        margin-left: 20px;
+    }
+
+    #progress .item1 {
+        margin-left: 0;
+    }
+}
+
+/* retina support */
+
+.retina #more .icon {
+    background: url('img/retina/arrow.png');
+}
+
+.retina #logo .image {
+    background: url('img/retina/logo.png');
+}
+
+.retina #yengo .image {
+    background: url('img/retina/yengo.png');
+}
+
+.retina #girl .image {
+    background: url('img/retina/girl.png');
+}
+
+.webkit.retina #slide_2 .wrapper .background {
+    background: url('img/retina/photo.jpg');
+}
+
+.retina #slide_3 table .first .image {
+    background: url('img/retina/logo.png');
+}
+
+.retina #slide_4 .left .patient {
+    background-image: url('img/retina/before.png');
+}
+
+.retina #slide_4 .right .patient {
+    background-image: url('img/retina/after.png');
+}
+
+@-webkit-keyframes consoleBlink {
+    0% {
+        webkit-opacity: 1;
+        opacity: 1;
+    }
+    50% {
+        webkit-opacity: 0.2;
+        opacity: 0.2;
+    }
+    100% {
+        webkit-opacity: 1;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes consoleBlink {
+    0% {
+        -moz-opacity: 1;
+        opacity: 1;
+    }
+    50% {
+        -moz-opacity: 0.2;
+        opacity: 0.2;
+    }
+    100% {
+        -moz-opacity: 0.2;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes consoleBlink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes consoleBlink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+</style>
+<style type="text/css">
+.js #slogan .first {
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+}
+
+.js #slogan .second {
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+}
+
+.js #slogan .third {
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+}
+
+.js #subslogan {
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+}
+
+.js #slide_2 .title {
+    opacity: 0;
+}
+
+.js #slide_2 .description {
+    opacity: 0;
+}
+
+.js #channel1 {
+    opacity: 0;
+}
+
+.js #reuters {
+    opacity: 0;
+}
+
+.js #slide_3 .wrapper .title {
+    opacity: 0;
+}
+
+.js #slide_3 .wrapper .description {
+    opacity: 0;
+}
+
+.js #slide_3 .first .main .image {
+    opacity: 0;
+}
+
+.js #slide_4 .left .patient {
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+}
+
+.js #slide_4 .right .patient {
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+}
+
+.js #slide_4 .card {
+    opacity: 0;
+}
+
+.js #progress {
+    position: relative;
+}
+
+.js #progress .image {
+    -webkit-transform: scale(.01);
+    transform: scale(.01);
+}
+
+.js #progress .image.initialized {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+</style>
+
+<script type="text/javascript">
+    $('html').removeClass('no-js').addClass('js');
+
+    function isIOS() {
+        return (
+            //Detect iPhone
+                (navigator.platform.indexOf("iPhone") != -1) ||
+            // Detect iPad
+                navigator.userAgent.match(/iPad/i) != null ||
+            //Detect iPod
+                (navigator.platform.indexOf("iPod") != -1)
+                );
+    }
+
+    if (isIOS()) {
+        $('html').addClass("ios");
+    }
+
+    if (/webkit/.test(navigator.userAgent.toLowerCase())) {
+        $('html').addClass('webkit').removeClass('non-webkit');
+    }
+
+    window.onload = function () {
+        if (!isIOS()) {
+            $('#back').fadeOut(1000);
+        } else {
+            $('#back').hide();
+        }
+
+        $("#logo .image").addClass("fadeInDown");
+        $("#yengo .image").addClass("fadeInUp");
+        $("#slogan .first").addClass("slideInLeft");
+
+        setTimeout(function () {
+            $("#slogan .second").addClass("slideInLeft");
+
+            setTimeout(function () {
+                $("#slogan .third").addClass("slideInLeft");
+
+                setTimeout(function () {
+                    $("#subslogan").addClass("bounceIn");
+
+                }, 900);
+
+            }, 700);
+        }, 700);
+
+
+        $('#slide_2 .subdescription').waypoint(function () {
+            setTimeout(function () {
+                $(".webkit #slide_2 .wrapper .background").addClass("blurred");
+
+                setTimeout(function () {
+                    $("#slide_2 .title").addClass("fadeInUp");
+
+                    setTimeout(function () {
+                        $("#slide_2 .description").addClass("fadeInUp");
+
+                        setTimeout(function () {
+                            $("#channel1").addClass("fadeIn");
+                            setTimeout(function () {
+                                $("#reuters").addClass("fadeIn");
+
+                                setTimeout(function () {
+                                    $("#slide_2 .subdescription").addClass("pulse");
+                                }, 900);
+                            }, 900);
+                        }, 900);
+                    }, 900);
+                }, 900);
+            }, 1000);
+        }, {
+            triggerOnce: true,
+            offset: 'bottom-in-view'
+        });
+
+        $('#slide_3 .wrapper .second').waypoint(function () {
+            setTimeout(function () {
+                $("#slide_3 .wrapper .title").addClass("flipInY");
+
+                setTimeout(function () {
+                    $("#slide_3 .wrapper .description").addClass("fadeInLeft");
+
+                    setTimeout(function () {
+                        $("#slide_3 .first .main .image").addClass("fadeInDown");
+                    }, 500);
+                }, 500);
+            }, 500);
+        }, {
+            triggerOnce: true,
+            offset: 'bottom-in-view'
+        });
+
+        $('#slide_4').waypoint(function (direction) {
+            $("#slide_4 .left .patient").addClass("bounceInLeft");
+
+            setTimeout(function () {
+                $("#slide_4 .right .patient").addClass("bounceInRight");
+
+                setTimeout(function () {
+                    $("#slide_4 .result").addClass("tada");
+
+                    setTimeout(function () {
+                        $("#slide_4 .card").addClass("fadeInRight");
+                    }, 500);
+                }, 1000);
+
+            }, 500);
+        });
+
+        $('#progress').waypoint(function () {
+            setTimeout(function () {
+                $("#progress .image").addClass("bounceIn");
+            }, 500);
+        }, {
+            triggerOnce: true,
+            offset: 'bottom-in-view'
+        });
+    };
+
+
+    var retina = window.devicePixelRatio > 1;
+    if (retina) {
+        $('html').addClass('retina');
+    }
+</script>
+</head>
+
+<body>
+<div id="back">
+    <div id="canvasContainer"></div>
+</div>
+
+<style type="text/css">
+#back {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+#canvasContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+
+.ie6 #canvasContainer {
+    position: absolute;
+}
+</style>
+
+<!--[if lt IE 7 ]>
+<script type="text/javascript">
+$('#back').attr('style', 'height: ' + $(window).height() + 'px;');
+</script>
+<![endif]-->
+
+<script type="text/javascript">
+    var cl = new CanvasLoader('canvasContainer', {id: 'canvasLoader'});
+    cl.setShape('square'); // default is 'oval'
+    cl.setDiameter(47); // default is 40
+    cl.setDensity(27); // default is 40
+    cl.setRange(0.5); // default is 1.3
+    cl.setSpeed(1); // default is 2
+    cl.setFPS(37); // default is 24
+    cl.show(); // Hidden by default
+
+    // This bit is only for positioning - not necessary
+    var loaderObj = document.getElementById('canvasLoader');
+    loaderObj.style.position = 'absolute';
+    loaderObj.style['top'] = cl.getDiameter() * -0.5 + 'px';
+    loaderObj.style['left'] = cl.getDiameter() * -0.5 + 'px';
+</script>
+
+<div id="container">
+<div id="slide_1">
+    <div class="wrapper">
+        <div id="logo">
+            <div class="image animated"></div>
+        </div>
+
+        <div id="slogan">
+            <p class="first animated">中医减肥</p>
+
+            <p class="second animated"><span>非</span>药物</p>
+
+            <p class="third animated"><span>非</span>创伤</p>
+        </div>
+
+        <div id="subslogan" class="animated">
+            <span class="first">您可以不信、</span>
+            <span class="second">但不能不看！</span>
+        </div>
+
+        <div id="more">
+            <div>如果您真想减肥，请把下边看完！</div>
+
+            <div class="icon"></div>
+        </div>
+
+        <div id="girl">
+            <div class="image"></div>
+        </div>
+
+        <div id="yengo">
+            <div class="image animated"></div>
+        </div>
+    </div>
+</div>
+
+<div id="slide_2">
+    <div class="wrapper">
+        <div class="background"></div>
+
+        <div class="title animated">国际连锁机构</div>
+
+        <div class="description animated">境外媒体争相报道</div>
+
+        <div id="channel1" class="animated"><img
+                src="img/1channel.png"/>俄罗斯电视一台</div>
+
+        <div id="reuters" class="animated"><img
+                src="img/reuters.png"/>路透社</div>
+
+        <div class="subdescription animated">境外媒体争相报道</div>
+    </div>
+</div>
+
+<div id="slide_3">
+    <div class="wrapper">
+        <div class="title animated">减肥疗法对比</div>
+
+        <div class="description animated">我们一直致力于肥胖的研究，更懂得减肥方法的选择</div>
+        <table>
+            <tr class="first">
+                <td style="width: 20%;"></td>
+                <td style="width: 15%;"></td>
+                <td style="width: 15%;"></td>
+                <td class="main" rowspan="2" style="width: 25%;">
+                    <div class="image animated"></div>
+                </td>
+                <td style="width: 12.5%;"></td>
+                <td style="width: 12.5%;"></td>
+            </tr>
+            <tr class="second">
+                <td></td>
+                <td>减肥药</td>
+                <td>吸脂减肥</td>
+                <td>运动减肥</td>
+                <td>节食减肥</td>
+            </tr>
+            <tr class="item">
+                <td class="heading">安全性</td>
+                <td class="option">肝脏，肾脏损伤<br/>
+                    内分泌紊乱
+                </td>
+                <td class="option">麻醉猝死<br/>
+                    脂肪栓塞中风
+                </td>
+                <td class="main option best">非药物、非创伤</td>
+                <td class="option">损伤关节</td>
+                <td class="option">损伤消化系统</td>
+            </tr>
+            <tr class="item">
+                <td class="heading">减后皮肤弹性</td>
+                <td class="option">皮肤松弛<br/>
+                    减后有赘皮
+                </td>
+                <td class="option">皮肤凹凸不平<br/>
+                    皮下瘢痕化
+                </td>
+                <td class="main option best">手法直接刺激皮下弹力纤维<br/>
+                    减后无赘皮
+                </td>
+                <td class="option">皮肤微微松弛<br/>
+                    好于药物
+                </td>
+                <td class="option">皮肤松弛<br/>
+                    气色晦暗
+                </td>
+            </tr>
+            <tr class="item">
+                <td class="heading">反弹率</td>
+                <td class="option">停药反弹<br/>
+                    越减越肥
+                </td>
+                <td class="option">减重不明显<br/>
+                    不能解决肥胖
+                </td>
+                <td class="main option best">俩周维护一次，不反弹</td>
+                <td class="option">减重缓慢<br/>
+                    停训反弹
+                </td>
+                <td class="option">恢复饮食<br/>
+                    立刻反弹
+                </td>
+            </tr>
+            <tr class="item">
+                <td class="heading">副作用</td>
+                <td class="option">肝肾损伤，便秘<br/>
+                    肠道黑变病
+                </td>
+                <td class="option">脂肪栓塞<br/>
+                    皮肤感觉异常
+                </td>
+                <td class="main option best">经络穴位推拿<br/>
+                    无任何副作用
+                </td>
+                <td class="option">损伤关节<br/>
+                    停训反弹
+                </td>
+                <td class="option">厌食症</td>
+            </tr>
+            <tr class="item">
+                <td class="heading">舒适度</td>
+                <td class="option">头晕、恶心<br/>
+                    乏力、腹泻
+                </td>
+                <td class="option">术后一个月<br/>
+                    皮下疼痛异常
+                </td>
+                <td class="main option best">非常舒适<br/>
+                    神清气爽
+                </td>
+                <td class="option good">开始全身痛<br/>
+                    坚持会精力充沛
+                </td>
+                <td class="option">全身乏力<br/>
+                    精神萎靡
+                </td>
+            </tr>
+            <tr class="item">
+                <td class="heading">时间成本</td>
+                <td class="option good">无需特殊时间</td>
+                <td class="option">需要7-30天休息</td>
+                <td class="main option">每周需要3-6小时</td>
+                <td class="option">每周要10小时</td>
+                <td class="option good">无需特殊时间</td>
+            </tr>
+            <tr class="item">
+                <td class="heading">降压、降脂、降糖</td>
+                <td class="option">无此作用</td>
+                <td class="option">无此作用</td>
+                <td class="main option best">减肥同时，减压<br/>
+                    降脂、降糖
+                </td>
+                <td class="option good">减肥同时有降脂<br/>
+                    降糖作用
+                </td>
+                <td class="option good">有降脂<br/>
+                    降糖作用
+                </td>
+            </tr>
+            <tr class="item">
+                <td class="heading">儿童减肥</td>
+                <td class="option">有副作用<br/>
+                    不适合儿童
+                </td>
+                <td class="option">不适合</td>
+                <td class="main option best">非药物、非创伤<br/>
+                    适合儿童
+                </td>
+                <td class="option good">鼓励运动<br/>
+                    疗效缓慢
+                </td>
+                <td class="option">身体发育<br/>
+                    不适合
+                </td>
+            </tr>
+            <tr class="item">
+                <td class="heading">产后减肥</td>
+                <td class="option">内分泌紊乱<br/>
+                    不是合
+                </td>
+                <td class="option">不适合</td>
+                <td class="main option best">减肥同时缓解<br/>
+                    颈背腰疲劳痛
+                </td>
+                <td class="option good">建议运动<br/>
+                    周期较长
+                </td>
+                <td class="option">无法长期坚持</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div id="slide_4">
+    <div class="wrapper" style="position: relative">
+        <table>
+            <tr>
+                <td class="left">
+                    <div class="container">
+                        <div class="title">成功病例</div>
+
+                        <div class="description">12个月治疗</div>
+
+                        <div class="wrapper">
+                            <div class="details">
+                                <div class="sign">前</div>
+
+                                <div class="data">减肥前体重：125.5kg<br/>
+                                    肥胖度124%<br/>
+                                    血压190/110mmHg<br/>
+                                    空腹血糖9.5mmol/L
+                                </div>
+                            </div>
+
+                            <div class="card animated">
+                                <div class="main"><span class="name">宋某某</span><br/>
+                                    女&nbsp;&nbsp;45岁
+                                </div>
+
+                                <div class="additional">身高：163cm</div>
+                            </div>
+
+                            <div class="patient animated"></div>
+                        </div>
+                    </div>
+                </td>
+                <td class="right">
+                    <div class="container">
+                        <div class="wrapper">
+                            <div class="details">
+                                <div class="sign">后</div>
+
+                                <div class="data">减肥后体重：68.4kg<br/>
+                                    肥胖度22%<br/>
+                                    血压120/80mmHg<br/>
+                                    空腹血糖5.6mmol/L
+                                </div>
+                            </div>
+
+                            <div class="result animated">
+                                总减体重
+                                <div class="weight">114.2斤</div>
+                            </div>
+
+                            <div class="patient animated"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div id="film"></div>
+    </div>
+</div>
+
+<div id="slide_5">
+    <div class="progress-container">
+        <div id="progress">
+            <img class="image item1 animated"
+                 src="img/progress_01.jpg"/>
+            <img class="image item2 animated"
+                 src="img/progress_02.jpg"/>
+            <img class="image item3 animated"
+                 src="img/progress_03.jpg"/>
+            <img class="image item4 animated"
+                 src="img/progress_04.jpg"/>
+            <img class="image item5 animated"
+                 src="img/progress_05.jpg"/>
+            <img class="image item6 animated"
+                 src="img/progress_06.jpg"/>
+            <img class="image item7 animated"
+                 src="img/progress_07.jpg"/>
+            <img class="image item8 animated"
+                 src="img/progress_08.jpg"/>
+        </div>
+
+        <div id="ruler">
+        </div>
+
+        <div id="map">
+            <div style="width:auto;height:768px;border:#ccc solid 1px;" id="dituContent"></div>
+
+            <div id="copyrights">Copyright © 2008-2013. 版权、肖像权所有，盗用必究！</div>
+            <script type="text/javascript">
+                //创建和初始化地图函数：
+                function initMap() {
+                    createMap();//创建地图
+                    setMapEvent();//设置地图事件
+                    addMapControl();//向地图添加控件
+                    addMarker();//向地图中添加marker
+                }
+
+                //创建地图函数：
+                function createMap() {
+                    var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+                    var point = new BMap.Point(116.382184, 39.93666);//定义一个中心点坐标
+                    map.centerAndZoom(point, 13);//设定地图的中心点和坐标并将地图显示在地图容器中
+                    window.map = map;//将map变量存储在全局
+                }
+
+                //地图事件设置函数：
+                function setMapEvent() {
+                    map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+                    map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+                    map.enableKeyboard();//启用键盘上下左右键移动地图
+                }
+
+                //地图控件添加函数：
+                function addMapControl() {
+                    //向地图中添加缩放控件
+                    var ctrl_nav = new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE});
+                    map.addControl(ctrl_nav);
+                    //向地图中添加缩略图控件
+                    var ctrl_ove = new BMap.OverviewMapControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 1});
+                    map.addControl(ctrl_ove);
+                    //向地图中添加比例尺控件
+                    var ctrl_sca = new BMap.ScaleControl({anchor: BMAP_ANCHOR_BOTTOM_LEFT});
+                    map.addControl(ctrl_sca);
+                }
+
+                //标注点数组
+                var markerArr = [
+                    {title: "雍和宫店", content: "北京市东城区安定门外东河沿1-3（门店）&nbsp;（北二环雍和宫桥西北角，北河沿快客西15米）<br/>010-64256390<br/><br/>地铁线路：<br/>地铁2号线到雍和宫站下车，A口出，向西步行过马路后右转，北河沿“快客便利店”西15米赵大夫减肥（门店）；地铁5号线，A口出，向北，走桥下，过雍和宫桥，北河沿“快客便利店”西15米赵大夫减肥（门店）<br/>公交车线路：&nbsp;<br/>雍和宫：乘坐117、13路,&nbsp;116路,&nbsp;117路,&nbsp;684路,&nbsp;机场2线空调&nbsp;雍和宫下，向北步行5分钟。<br/>雍和宫桥东：13路,&nbsp;18路,&nbsp;44内,&nbsp;44外,&nbsp;62路,&nbsp;75路,&nbsp;116路,&nbsp;684路,&nbsp;909路,&nbsp;特12路内环,&nbsp;特12外,&nbsp;特2路雍和宫桥东下，向西步行2分钟。<br/>雍和宫桥北：117路,&nbsp;125路过马路南行2分钟", point: "116.421943|39.956297", isOpen: 0, icon: {w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12}}
+                    ,
+                    {title: "团结湖店", content: "北京市朝阳区团结湖北三条5号楼<br/>010-85961390&nbsp;<br/><br/>地铁线路：<br/>地铁10号线到团结湖站下车，出东南口，向东步行5分钟，至团结湖公交站即到。<br/>公交车线路：&nbsp;<br/>到团结湖站下：乘坐117、758、31、350、635、43、406、499、672、431、675、673、750、984路到团结湖站下车。<br/>到团结湖北口下：乘坐31、115、718路到团结湖北口下车。", point: "116.474507|39.938285", isOpen: 0, icon: {w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12}}
+                    ,
+                    {title: "国贸店", content: "北京市朝阳区建外SOHO&nbsp;2&nbsp;号楼&nbsp;502室<br/>010-58698086<br/><br/>地铁线路：<br/>地铁1号线或10号线到大北窑下车，大北窑西南角，建外SOHO&nbsp;2&nbsp;号楼502<br/>公交车线路：&nbsp;<br/>大北窑：113路,&nbsp;421路,&nbsp;806路,&nbsp;809路<br/>大北窑西：1路,&nbsp;9路,&nbsp;28路,&nbsp;99路,&nbsp;205路,&nbsp;609路,&nbsp;666路,&nbsp;667-1联运,&nbsp;668快,&nbsp;668路,&nbsp;668路-1路联运通勤快车高峰,&nbsp;669-1联运,&nbsp;728快,&nbsp;728路,&nbsp;729路,&nbsp;804路,&nbsp;805路,&nbsp;938路,&nbsp;938路快，805路,&nbsp;938路,&nbsp;938路空调,&nbsp;938路快,&nbsp;938路支5。<br/>大北窑东：1路,&nbsp;11路,&nbsp;57路,&nbsp;312路,&nbsp;312路区间,&nbsp;402路,&nbsp;405路,&nbsp;502路,&nbsp;647路,&nbsp;647路-312路联运,&nbsp;648路,&nbsp;666路,&nbsp;667路,&nbsp;667路-552路联运高峰快,&nbsp;668快,&nbsp;669路,&nbsp;728路,&nbsp;801路,&nbsp;810路,&nbsp;976路，938路支,&nbsp;938路支5<br/>大北窑南：28路,&nbsp;57路,&nbsp;214路,&nbsp;348路,&nbsp;601路,&nbsp;683路,&nbsp;686路,&nbsp;707路,&nbsp;806路,&nbsp;807路,&nbsp;808路,&nbsp;846路,&nbsp;954路,&nbsp;974路,&nbsp;976路,&nbsp;998路,&nbsp;运通107路<br/>大北窑南：805路快,&nbsp;810路,&nbsp;938路支,&nbsp;938路支5快", point: "116.46724|39.911953", isOpen: 0, icon: {w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12}}
+                    ,
+                    {title: "世纪城店", content: "海淀区世纪城晴雪园北门5-7号商铺<br/>010-88891600<br/><br/>地铁线路：<br/>地铁10号线到火器营站下车，西北口出，向西步行2分钟，即到。<br/>公交车线路：<br/>空军指挥学院南门：360路,&nbsp;365路,&nbsp;539路<br/>火器营：437路,&nbsp;481路", point: "116.291689|39.972645", isOpen: 0, icon: {w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12}}
+                    ,
+                    {title: "富贵园店", content: "北京市东城区富贵园四区一号楼底商<br/>010-67172887<br/><br/>地铁线路：<br/>地铁5号线瓷器口站下车西行10分钟<br/>公交车线路：<br/>安化楼：8路,&nbsp;12路,&nbsp;23路,&nbsp;57路,&nbsp;715路<br/>培新街：8路,&nbsp;12路,&nbsp;23路,&nbsp;57路,&nbsp;715路<br/>广渠门内：12路,&nbsp;23路,&nbsp;57路,&nbsp;715路<br/>白桥大街：8路,&nbsp;12路,&nbsp;525路,&nbsp;610路", point: "116.441755|39.901853", isOpen: 0, icon: {w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12}}
+                    ,
+                    {title: "西坝河店", content: "北京市朝阳区光熙门北里34号<br/>010-64270586<br/><br/>地铁线路：<br/>地铁13号线到光熙门站下车，B口出，过太阳宫桥向东走即到。<br/>公交车线路：<br/>302路;&nbsp;367路;&nbsp;419路;&nbsp;596路;&nbsp;601路;&nbsp;718路;&nbsp;848路;&nbsp;916快;&nbsp;942快;&nbsp;970路;&nbsp;980快;&nbsp;984路;&nbsp;985路;&nbsp;特8内;&nbsp;特8内快;&nbsp;特8外;&nbsp;特8外快;&nbsp;<br/>运通104线130路到西坝河站下车向西走即到", point: "116.442294|39.974926", isOpen: 0, icon: {w: 23, h: 25, l: 46, t: 21, x: 9, lb: 12}}
+                ];
+                //创建marker
+                function addMarker() {
+                    for (var i = 0; i < markerArr.length; i++) {
+                        var json = markerArr[i];
+                        var p0 = json.point.split("|")[0];
+                        var p1 = json.point.split("|")[1];
+                        var point = new BMap.Point(p0, p1);
+                        var iconImg = createIcon(json.icon);
+                        var marker = new BMap.Marker(point, {icon: iconImg});
+                        var iw = createInfoWindow(i);
+                        var label = new BMap.Label(json.title, {"offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20)});
+                        marker.setLabel(label);
+                        map.addOverlay(marker);
+                        label.setStyle({
+                            borderColor: "#808080",
+                            color: "#333",
+                            cursor: "pointer"
+                        });
+
+                        (function () {
+                            var index = i;
+                            var _iw = createInfoWindow(i);
+                            var _marker = marker;
+                            _marker.addEventListener("click", function () {
+                                this.openInfoWindow(_iw);
+                            });
+                            _iw.addEventListener("open", function () {
+                                _marker.getLabel().hide();
+                            })
+                            _iw.addEventListener("close", function () {
+                                _marker.getLabel().show();
+                            })
+                            label.addEventListener("click", function () {
+                                _marker.openInfoWindow(_iw);
+                            })
+                            if (!!json.isOpen) {
+                                label.hide();
+                                _marker.openInfoWindow(_iw);
+                            }
+                        })()
+                    }
+                }
+                //创建InfoWindow
+                function createInfoWindow(i) {
+                    var json = markerArr[i];
+                    var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+                    return iw;
+                }
+                //创建一个Icon
+                function createIcon(json) {
+                    var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w, json.h), {imageOffset: new BMap.Size(-json.l, -json.t), infoWindowOffset: new BMap.Size(json.lb + 5, 1), offset: new BMap.Size(json.x, json.h)})
+                    return icon;
+                }
+
+                initMap();//创建和初始化地图
+            </script>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function () {
+            try {
+                w.yaCounter24439538 = new Ya.Metrika({id: 24439538,
+                    webvisor: true,
+                    clickmap: true,
+                    trackLinks: true,
+                    accurateTrackBounce: true});
+            } catch (e) {
+            }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else {
+            f();
+        }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="//mc.yandex.ru/watch/24439538" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- Google Analytics counter -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-49426564-1', 'gliang.net');
+    ga('send', 'pageview');
+
+</script>
+<!-- /Google Analytics counter -->
+</body>
+</html>
